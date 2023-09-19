@@ -1,0 +1,147 @@
+server:
+  port: 1206
+  #servlet:
+   # context-path: /ors
+    
+  connection-timeout: 1200000
+spring:
+  jackson:
+    mapper:
+      DEFAULT_VIEW_INCLUSION: true 
+    serialization: 
+      WRITE_DATES_AS_TIMESTAMPS: false
+    deserialization:
+      FAIL_ON_IGNORED_PROPERTIES: false
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+      ACCEPT_SINGLE_VALUE_AS_ARRAY: true
+  resources:  
+    cache:
+      cachecontrol:
+        no-cache: true
+  datasource:
+    cms:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://5.189.154.210:3306/cms?useSSL=false
+      username: root
+      password: winggsak123
+    utahtruckdrivingschool:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://70.35.199.206:3306/utahtruckdrivingschool?useSSL=false
+      username: root
+      password: a2kw5i5n5gg1s
+    truckcity:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://5.189.154.210:3306/truckcity?useSSL=false
+      username: root
+      password: winggsak123
+    towing:   
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://70.35.199.206:3306/towing?useSSL=false
+      username: root
+      password: a2kw5i5n5gg1s 
+    onlineroadservices:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://5.189.154.210:3306/onlineroadservices?useSSL=false
+      username: root
+      password: winggsak123
+    nflfreight:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://70.35.199.206:3306/nflfreight?useSSL=false
+      # url: jdbc:mysql://localhost:3306/nflfreight?useSSL=false   #43 sever db
+      username: root
+      password: TWi!@%Pts12!i
+    itruckdispatch:
+      driverClassName: com.mysql.jdbc.Driver
+      #url: jdbc:mysql://5.189.154.210:3306/itruckdispatch?useSSL=false
+      url: jdbc:mysql://localhost:3306/itruckdispatch?useSSL=false
+      username: root
+      password: root
+    cdl:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://70.35.199.206:3306/cdl?useSSL=false
+      #url: jdbc:mysql://localhost:3306/cdl?useSSL=false
+      username: root
+      password: a2kw5i5n5gg1s
+    eldtapp:
+      driverClassName: com.mysql.jdbc.Driver
+      #url: jdbc:mysql://5.189.154.210:3306/ecdl?useSSL=false
+      url: jdbc:mysql://70.35.199.206:3306/eldtapp?useSSL=false
+      username: root
+      password: a2kw5i5n5gg1s
+    paultruckline:
+      driverClassName: com.mysql.jdbc.Driver
+      #url: jdbc:mysql://localhost:3306/a1truckdispatch?useSSL=false
+      url: jdbc:mysql://70.35.199.206:3306/paultruckline?useSSL=false
+      username: root
+      password: a2kw5i5n5gg1s
+    fresnotruckline:
+      driverClassName: com.mysql.jdbc.Driver
+      #url: jdbc:mysql://localhost:3306/a1truckdispatch?useSSL=false
+      url: jdbc:mysql://70.35.199.206:3306/fresnotruckline?useSSL=false
+      username: root
+      password: a2kw5i5n5gg1s
+
+  jpa:
+    database: mysql
+    openInView: false
+    show_sql: true
+    #show_sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate.jdbc.lob.non_contextual_creation: true
+      
+  data:
+    jpa:
+      repositories.enabled: true
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: contact.onlineroadservices@gmail.com
+    password: ydshsufitfqrbksv
+    # Other properties
+    properties:
+      mail:
+       smtp:
+         starttls:
+          enable: true
+       auth: true
+       connectiontimeout: 5000
+       timeout: 5000
+       writetimeout: 5000  
+  jmx:
+    default-domain: wing.ak.ors  
+ 
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+         
+
+security:
+  jwt:
+    token:
+      secret-key: AnilJavaDeveloper
+      expire-length: 72
+ 
+stripe:
+  publickey : pk_live_51KhKOBEMKimteY1Off8aHp4ijxjTKiRS4SCE7tAVkISZCytBgoTmiJHTQTtGjbRrHtr8sWz65rFlpCENEhBPZl3800YlsNKGn0
+  secretkey: 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  
+  webhookkey: whsec_EFD1hvOtcJdyEHP4FCoGBd0egJygVNsV
+  
+google:
+  recaptcha:
+    #secret-key: 6LcGNZ4hAAAAAGtOIZdiWtaE8v5apUk8LXWnN6xP #localhost
+    secret-key: 6LfPx58hAAAAAH8qG3VsV-daecnCJvk3om4hjMqe
+    
+upload_path : E:\Rakhi-Java\STSCode\CMS\target\classes\static\public\front\img\
+
+resources:
+  static-locations: classpath:/static
+    
